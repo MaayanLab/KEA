@@ -1,6 +1,7 @@
-target
-.settings
-.project
-.DS_Store
 .classpath
+.DS_Store
+.project
+.settings
+build
 launch.properties
+target
