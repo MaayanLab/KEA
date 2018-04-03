@@ -2,6 +2,7 @@
 .DS_Store
 .project
 .settings
+bin
 build
 launch.properties
 target
