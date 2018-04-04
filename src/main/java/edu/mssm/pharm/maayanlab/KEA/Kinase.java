@@ -3,8 +3,10 @@ package edu.mssm.pharm.maayanlab.KEA;
 import java.util.Set;
 import java.util.HashSet;
 
+import com.google.gson.annotations.Expose;
 public class Kinase implements Comparable<Object> {
 
+	@Expose
 	private String name;
 	private Set<String> substrates = new HashSet<String>();
 	
@@ -13,10 +15,14 @@ public class Kinase implements Comparable<Object> {
 	
 	private double fractionOfSubstratesInInput;
 	private double fractionOfSubstratesInBackground;
+	@Expose
 	private double pvalue;
+	@Expose
 	private double zscore;
+	@Expose
 	private double combinedScore;
 	
+	@Expose
 	private Set<String> enrichedSubstrates;
 	
 	public Kinase(
@@ -113,6 +119,7 @@ public class Kinase implements Comparable<Object> {
 		return outputString.toString();
 	}
 
+	@Override
 	public int compareTo(Object o) {
 		if (this.pvalue > ((Kinase) o).pvalue)			
 			return 1;
@@ -122,6 +129,31 @@ public class Kinase implements Comparable<Object> {
 			return 0;
 	}
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Kinase other = (Kinase) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
 	public void computeScore(int currentRank) {
 		if (mean == 0 && standardDeviation == 0)
 			zscore = 0;
