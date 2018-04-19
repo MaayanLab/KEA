@@ -27,11 +27,25 @@ public class KEA implements SettingsChanger {
 
 	private final String PROTEIN_BACKGROUND = "res/kinase-protein_interactions.csv";
 	private final String PHOSPHO_BACKGROUND = "res/phosphorylation_reactions.csv";
-	private final String IPTM_BACKGROUND = "res/iPTMnet_kinome_interactions.txt";
-	
+	private final String KEA_2018_BACKGROUND = "TODO";
+	private final String ARCHS4_BACKGROUND = "TODO";
+	private final String IPTMNET_BACKGROUND = "res/iPTMnet_kinome_interactions.txt";
+	private final String NETWORK_IN_BACKGROUND = "TODO";
+	private final String PHOSPHO_ELM_BACKGROUND = "TODO";
+	private final String PHOSPHOPOINT_BACKGROUND = "TODO";
+	private final String PHOSPHOPLUS_BACKGROUND = "TODO";
+	private final String MINT_BACKGROUND = "TODO";
+
 	private final String BACKGROUND_RANKS = "res/kea_ranks.txt";
-	private final String IPTM_BACKGROUND_RANKS = "res/iptmnet_ranks.txt";
-	
+	private final String KEA_2018_BACKGROUND_RANKS = "TODO";
+	private final String ARCHS4_BACKGROUND_RANKS = "TODO";
+	private final String IPTMNET_BACKGROUND_RANKS = "res/iptmnet_ranks.txt";
+	private final String NETWORK_IN_BACKGROUND_RANKS = "TODO";
+	private final String PHOSPHO_ELM_BACKGROUND_RANKS = "TODO";
+	private final String PHOSPHOPOINT_BACKGROUND_RANKS = "TODO";
+	private final String PHOSPHOPLUS_BACKGROUND_RANKS = "TODO";
+	private final String MINT_BACKGROUND_RANKS = "TODO";
+
 	// Output header
 	protected final String HEADER = "Kinase,Substrates in Input,Substrates in Database,Input Fraction,Database Fraction,Difference,P-value,Z-score,Combined Score,Substrates";
 	
@@ -55,6 +69,14 @@ public class KEA implements SettingsChanger {
 	// Setting values
 	public final static String KINASE_PROTEIN = "kinase-protein interactions only";
 	public final static String PHOSPHORYLATION = "phosphorylation reactions only";
+	public final static String KEA_2018 = "kea 2018";
+	public final static String ARCHS4 = "ARCHS4";
+	public final static String IPTMNET = "iPTMnet";
+	public final static String NETWORK_IN = "NetworkIN";
+	public final static String PHOSPHO_ELM = "Phospho.ELM";
+	public final static String PHOSPHOPOINT = "Phosphopoint";
+	public final static String PHOSPHOPLUS = "PhosphoPlus";
+	public final static String MINT = "MINT";
 	public final static String BOTH_TYPES = "both types";
 	public final static String PVALUE = "p-value";
 	public final static String RANK = "rank";	
@@ -167,12 +189,71 @@ public class KEA implements SettingsChanger {
 		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHORYLATION)) {
 			background = FileUtils.readResource(PHOSPHO_BACKGROUND);
 		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.ARCHS4)) {
+			background = FileUtils.readResource(ARCHS4_BACKGROUND);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.IPTMNET)) {
+			background = FileUtils.readResource(IPTMNET_BACKGROUND);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.NETWORK_IN)) {
+			background = FileUtils.readResource(NETWORK_IN_BACKGROUND);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHO_ELM)) {
+			background = FileUtils.readResource(PHOSPHO_ELM_BACKGROUND);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHOPOINT)) {
+			background = FileUtils.readResource(PHOSPHOPOINT_BACKGROUND);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHOPLUS)) {
+			background = FileUtils.readResource(PHOSPHOPLUS_BACKGROUND);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.MINT)) {
+			background = FileUtils.readResource(MINT_BACKGROUND);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.KEA_2018)) {
+			background = FileUtils.readResource(KEA_2018_BACKGROUND);
+		}
 		else {
 			background = FileUtils.readResource(PROTEIN_BACKGROUND);
 			background.addAll(FileUtils.readResource(PHOSPHO_BACKGROUND));
 		}
-		
+
 		return background;
+	}
+	
+	private ArrayList<String> assembleBackgroundRanks() {
+		ArrayList<String> kea_ranks;
+
+		if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.KEA_2018)) {
+			kea_ranks = FileUtils.readResource(KEA_2018_BACKGROUND_RANKS);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.ARCHS4)) {
+			kea_ranks = FileUtils.readResource(ARCHS4_BACKGROUND_RANKS);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.IPTMNET)) {
+			kea_ranks = FileUtils.readResource(IPTMNET_BACKGROUND_RANKS);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.NETWORK_IN)) {
+			kea_ranks = FileUtils.readResource(NETWORK_IN_BACKGROUND_RANKS);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHO_ELM)) {
+			kea_ranks = FileUtils.readResource(PHOSPHO_ELM_BACKGROUND_RANKS);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHOPOINT)) {
+			kea_ranks = FileUtils.readResource(PHOSPHOPOINT_BACKGROUND_RANKS);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHOPLUS)) {
+			kea_ranks = FileUtils.readResource(PHOSPHOPLUS_BACKGROUND_RANKS);
+		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.MINT)) {
+			kea_ranks = FileUtils.readResource(MINT_BACKGROUND_RANKS);
+		}
+		else /* if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.KEA_2018)) */ {
+			kea_ranks = FileUtils.readResource(BACKGROUND_RANKS);
+			// Phospho, Phosphopoint, PhosphositePlus, and MINT combined ??
+		}
+
+		return kea_ranks;
 	}
 	
 	private void computeEnrichment(ArrayList<String> background, Collection<String> genes) {
@@ -202,7 +283,7 @@ public class KEA implements SettingsChanger {
 		}
 		
 		// read KEA ranks
-		ArrayList<String> kea_ranks = FileUtils.readResource(BACKGROUND_RANKS);
+		ArrayList<String> kea_ranks = assembleBackgroundRanks();
 		for (String kinase_rank : kea_ranks) {
 			String[] splitLine = kinase_rank.split("\\s");
 			if (kinaseMap.containsKey(splitLine[0]))
