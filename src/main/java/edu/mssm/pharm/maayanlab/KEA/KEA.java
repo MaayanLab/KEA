@@ -37,14 +37,14 @@ public class KEA implements SettingsChanger {
 	private final String MINT_BACKGROUND = "res/MINT_KINASES.csv";
 
 	private final String BACKGROUND_RANKS = "res/kea_ranks.txt";
-	private final String KEA_2018_BACKGROUND_RANKS = "TODO";
-	private final String ARCHS4_BACKGROUND_RANKS = "TODO";
+	private final String KEA_2018_BACKGROUND_RANKS = "";
+	private final String ARCHS4_BACKGROUND_RANKS = "";
 	private final String IPTMNET_BACKGROUND_RANKS = "res/iptmnet_ranks.txt";
-	private final String NETWORK_IN_BACKGROUND_RANKS = "TODO";
-	private final String PHOSPHO_ELM_BACKGROUND_RANKS = "TODO";
-	private final String PHOSPHOPOINT_BACKGROUND_RANKS = "TODO";
-	private final String PHOSPHOPLUS_BACKGROUND_RANKS = "TODO";
-	private final String MINT_BACKGROUND_RANKS = "TODO";
+	private final String NETWORK_IN_BACKGROUND_RANKS = "";
+	private final String PHOSPHO_ELM_BACKGROUND_RANKS = "";
+	private final String PHOSPHOPOINT_BACKGROUND_RANKS = "";
+	private final String PHOSPHOPLUS_BACKGROUND_RANKS = "";
+	private final String MINT_BACKGROUND_RANKS = "";
 
 	// Output header
 	protected final String HEADER = "Kinase,Substrates in Input,Substrates in Database,Input Fraction,Database Fraction,Difference,P-value,Z-score,Combined Score,Substrates";
@@ -283,12 +283,12 @@ public class KEA implements SettingsChanger {
 		}
 		
 		// read KEA ranks
-		ArrayList<String> kea_ranks = assembleBackgroundRanks();
-		for (String kinase_rank : kea_ranks) {
-			String[] splitLine = kinase_rank.split("\\s");
-			if (kinaseMap.containsKey(splitLine[0]))
-				kinaseMap.get(splitLine[0]).setRankStats(Double.parseDouble(splitLine[1]), Double.parseDouble(splitLine[2]));
-		}
+		// ArrayList<String> kea_ranks = assembleBackgroundRanks();
+		// for (String kinase_rank : kea_ranks) {
+		// 	String[] splitLine = kinase_rank.split("\\s");
+		// 	if (kinaseMap.containsKey(splitLine[0]))
+		// 		kinaseMap.get(splitLine[0]).setRankStats(Double.parseDouble(splitLine[1]), Double.parseDouble(splitLine[2]));
+		// }
 		
 		kinases = new LinkedList<Kinase>(kinaseMap.values());
 		
@@ -342,11 +342,11 @@ public class KEA implements SettingsChanger {
 		Collections.sort(kinases);
 		
 		// Count current rank and compute z-score
-		int counter = 1;
-		for (Kinase kinase : kinases) {
-			kinase.computeScore(counter);
-			counter++;
-		}
+		// int counter = 1;
+		// for (Kinase kinase : kinases) {
+		// 	kinase.computeScore(counter);
+		// 	counter++;
+		// }
 		
 		if (settings.get(SORT_BY).equals(COMBINED_SCORE)) {
 			// Sort by combined score
