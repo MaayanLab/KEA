@@ -29,7 +29,7 @@ public class KEA implements SettingsChanger {
 	private final String PHOSPHO_BACKGROUND = "res/phosphorylation_reactions.csv";
 	private final String KEA_2018_BACKGROUND = "res/KEA_2018_KINASES.csv";
 	private final String ARCHS4_BACKGROUND = "res/ARCHS4_KINASES.csv";
-	private final String IPTMNET_BACKGROUND = "res/iPTMnet_kinome_interactions.txt";
+	private final String IPTMNET_BACKGROUND = "res/iPTMnet_kinome_interactions.csv";
 	private final String NETWORK_IN_BACKGROUND = "res/NetworkIN_KINASES.csv";
 	private final String PHOSPHO_ELM_BACKGROUND = "res/Phospho.ELM_KINASES.csv";
 	private final String PHOSPHOPOINT_BACKGROUND = "res/Phosphopoint_KINASES.csv";
