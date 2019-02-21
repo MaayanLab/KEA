@@ -189,6 +189,9 @@ public class KEA implements SettingsChanger {
 		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.PHOSPHORYLATION)) {
 			background = FileUtils.readResource(PHOSPHO_BACKGROUND);
 		}
+		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.KEA_2018)) {
+			background = FileUtils.readResource(KEA_2018_BACKGROUND);
+		}
 		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.ARCHS4)) {
 			background = FileUtils.readResource(ARCHS4_BACKGROUND);
 		}
@@ -209,9 +212,6 @@ public class KEA implements SettingsChanger {
 		}
 		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.MINT)) {
 			background = FileUtils.readResource(MINT_BACKGROUND);
-		}
-		else if (settings.get(KEA.KINASE_INTERACTIONS).equals(KEA.KEA_2018)) {
-			background = FileUtils.readResource(KEA_2018_BACKGROUND);
 		}
 		else {
 			background = FileUtils.readResource(PROTEIN_BACKGROUND);

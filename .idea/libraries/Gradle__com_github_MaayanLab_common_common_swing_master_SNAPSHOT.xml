@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.MaayanLab.common:common-swing:master-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-swing/master-SNAPSHOT/b841295675599c8e22edd7c838bc9ba986803770/common-swing-master-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-swing/master-SNAPSHOT/a2e046eec205b8d9b761d647b1e1416570c5824/common-swing-master-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-swing/master-SNAPSHOT/1688c3c9ba4525786adbd941ff064b3b50168582/common-swing-master-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-swing/master-SNAPSHOT/657875ff2197ab1d6b8da482e8ca1a054db2c90/common-swing-master-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

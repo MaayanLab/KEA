@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.MaayanLab.common:common-math:master-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-math/master-SNAPSHOT/cfe7f9f4610e70bb95d934a13962e9dccfdbcb07/common-math-master-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-math/master-SNAPSHOT/e5830a6ddbbb834949ccb38b40062ab7266df710/common-math-master-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-math/master-SNAPSHOT/3e8010aa236bd3c046702ffa34e6f0e7e041037/common-math-master-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MaayanLab.common/common-math/master-SNAPSHOT/ccbb32087041fbdbae80cf494429bd9f1a979c25/common-math-master-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
